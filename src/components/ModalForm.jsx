@@ -33,7 +33,7 @@ export default function ModalForm({ listState, modalState }) {
   if (!showModal) return null;
 
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} data-testid="form">
       <label>
         Name:
         <input
