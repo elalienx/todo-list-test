@@ -1,4 +1,18 @@
+// NPM packages
+import { useState } from "react";
+
+// Project file
+import getNames from "./script/getNames";
+
 export default function App() {
+  // Properties
+  const [teachers, setTeachers] = useState(getNames());
+
+  // Components
+  const TeacherItems = teachers.map((item, index) => (
+    <li key={index}>{item}</li>
+  ));
+
   return (
     <div className="App">
       <p>
@@ -12,6 +26,7 @@ export default function App() {
       >
         Learn React
       </a>
+      <ol>{TeacherItems}</ol>
     </div>
   );
 }

@@ -32,3 +32,25 @@ test("Works with the name being a undefined", () => {
   // Assert (comparisson)
   expect(arrayWithNames).toEqual(result);
 });
+
+test("User forgot about passing the required arguments", () => {
+  // Arrange (setup)
+  const whatIwant = [""];
+
+  // Act (action)
+  const arrayWithNames = getNames();
+
+  // Assert (comparisson)
+  expect(arrayWithNames).toEqual(whatIwant);
+});
+
+test("User puts 0 on the times argument", () => {
+  // Arrange
+  const whatIshouldHappen = [];
+
+  // Act
+  const arrayWithNames = getNames("Eduardo", 0);
+
+  // Assert
+  expect(arrayWithNames).toEqual(whatIshouldHappen);
+});
