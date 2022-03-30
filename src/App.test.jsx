@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import App from "./App";
 
 test("show the 'learn react link' on the screen", () => {
@@ -10,6 +10,26 @@ test("show the 'learn react link' on the screen", () => {
 
   // 3. Assert
   expect(linkElement).toBeInTheDocument(); // yes? or no?
+});
+
+test("Shows a list of teachers when the button 'Show teachers' is pressed", () => {
+  // Arrange
+  render(<App />);
+
+  // Action
+  const button = screen.getByText(/show teachers/i);
+  fireEvent(
+    button,
+    new MouseEvent("click", {
+      bubbles: true,
+      cancelable: true,
+    })
+  );
+
+  const listElement = screen.getByText(/eduardo/i);
+
+  // Asset
+  expect(listElement).toBeInTheDocument();
 });
 
 // // Format of the test function:

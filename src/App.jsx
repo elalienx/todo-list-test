@@ -5,8 +5,8 @@ import { useState } from "react";
 import getNames from "./script/getNames";
 
 export default function App() {
-  // Properties
-  const [teachers, setTeachers] = useState(getNames());
+  // Local state
+  const [teachers, setTeachers] = useState([]);
 
   // Components
   const TeacherItems = teachers.map((item, index) => (
@@ -18,15 +18,13 @@ export default function App() {
       <p>
         Edit <code>src/App.js</code> and save to reload.
       </p>
-      <a
-        className="App-link"
-        href="https://reactjs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <a href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
         Learn React
       </a>
-      <ol>{TeacherItems}</ol>
+      {teachers.length > 0 && <ol>{TeacherItems}</ol>}
+      <button onClick={() => setTeachers(getNames("Eduardo", 1))}>
+        Show teachers
+      </button>
     </div>
   );
 }

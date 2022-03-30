@@ -22,7 +22,7 @@ test("Works with the name being a number", () => {
   expect(arrayWithNames).toEqual(result);
 });
 
-test("Works with the name being a undefined", () => {
+test("The function works with the name being a undefined", () => {
   // Arrange (setup)
   const result = ["", "", ""]; // expected result
 
@@ -33,7 +33,7 @@ test("Works with the name being a undefined", () => {
   expect(arrayWithNames).toEqual(result);
 });
 
-test("User forgot about passing the required arguments", () => {
+test("Someone forgot about passing the required arguments", () => {
   // Arrange (setup)
   const whatIwant = [""];
 
@@ -44,7 +44,7 @@ test("User forgot about passing the required arguments", () => {
   expect(arrayWithNames).toEqual(whatIwant);
 });
 
-test("User puts 0 on the times argument", () => {
+test("Someone puts 0 on the times argument", () => {
   // Arrange
   const whatIshouldHappen = [];
 
