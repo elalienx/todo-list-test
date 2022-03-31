@@ -1,6 +1,10 @@
 // NPM packages
 import { useState } from "react";
 
+// Project files
+import InputField from "./InputField";
+import form from "../data/form.json";
+
 export default function ModalForm({ listState, modalState }) {
   const [list, setList] = listState;
   const [showModal, setShowModal] = modalState;
@@ -34,29 +38,8 @@ export default function ModalForm({ listState, modalState }) {
 
   return (
     <form onSubmit={onSubmit} data-testid="form">
-      <label>
-        Name:
-        <input
-          autoFocus
-          placeholder="Ex: Chair"
-          type="text"
-          required
-          value={name}
-          onChange={(event) => setName(event.target.value)}
-        />
-      </label>
-      <label>
-        Price:
-        <input
-          type="number"
-          placeholder="Ex: 500"
-          required
-          min={1}
-          max={9000}
-          value={price}
-          onChange={(event) => setPrice(event.target.value)}
-        />
-      </label>
+      <InputField state={[name, setName]} />
+      <InputField setup={form.price} />
       <button>Submit</button>
       <button onClick={resetForm}>Cancel</button>
     </form>
