@@ -26,18 +26,18 @@ export default function InputField({ setup, state }) {
   );
 }
 
-InputField.propTypes = {
-  setup: PropTypes.shape({
-    autoFocus: PropTypes.bool,
-    label: PropTypes.string.isRequired,
-    max: PropTypes.number,
-    min: PropTypes.number,
-    placeholder: PropTypes.string.isRequired,
-    required: PropTypes.bool,
-    type: PropTypes.string.isRequired,
-  }).isRequired,
-  state: PropTypes.arrayOf(
-    PropTypes.string.isRequired,
-    PropTypes.func.isRequired
-  ).isRequired,
-};
+// InputField.propTypes = {
+//   setup: PropTypes.shape({
+//     autoFocus: PropTypes.bool,
+//     label: PropTypes.string.isRequired,
+//     max: PropTypes.number,
+//     min: PropTypes.number,
+//     placeholder: PropTypes.string.isRequired,
+//     required: PropTypes.bool,
+//     type: PropTypes.string.isRequired,
+//   }).isRequired,
+//   state: PropTypes.arrayOf(
+//     PropTypes.string.isRequired,
+//     PropTypes.func.isRequired
+//   ).isRequired,
+// };

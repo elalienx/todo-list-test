@@ -25,12 +25,12 @@ export default function ModalForm({ listState, modalState }) {
 
     setList([...list, newItem]);
     resetForm();
-    setShowModal(null);
   }
 
   function resetForm() {
     setName("");
     setPrice("");
+    setShowModal(null);
   }
 
   // Safeguard
@@ -38,8 +38,9 @@ export default function ModalForm({ listState, modalState }) {
 
   return (
     <form onSubmit={onSubmit} data-testid="form">
-      <InputField state={[name, setName]} />
-      <InputField setup={form.price} />
+      <h2>Add new product</h2>
+      <InputField setup={form.name} state={[name, setName]} />
+      <InputField setup={form.price} state={[price, setPrice]} />
       <button>Submit</button>
       <button onClick={resetForm}>Cancel</button>
     </form>

@@ -28,3 +28,6 @@ export default function App() {
     </div>
   );
 }
+
+// Note:
+// Add a test verifies that when clicking on  the "Add task" the modal appears
